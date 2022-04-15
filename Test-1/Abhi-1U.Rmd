@@ -1,0 +1,81 @@
+---
+title: "Stats: An R Package for Statistics"
+abstract: >
+  An abstract of less than 150 words.
+draft: true
+author:  
+  # see ?rjournal_article for more information
+  - name: Shylock
+    affiliation: Money-Lender
+    address:
+    - Somewhere in Venice
+    - Italy 
+    url: 
+    orcid: 0000-1721-1511-1101
+    email:  shylock@money.com
+  - name: Antonio
+    url: https://www.britannica.com/animal/bilby
+    email: antonio@trader.com
+    orcid: 0000-0002-0912-0244
+    affiliation: Trader
+    address:
+    - The Docks
+    - Somewhere in Venice, Italy
+type: package
+output: 
+  rjtools::rjournal_web_article:
+    self_contained: yes
+    toc: no
+bibliography: RJreferences.bib
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+data("AirPassengers")
+```
+
+# Introduction  
+This paper will highlight how modern day Shylock would love to use the \CRANpkg{stats} for his actuarial and money lending interests . The same could be applicable for Antonio for managing his risk properly had he analyzed and predicted his ship routes and data well.  
+
+# Background
+I use the stats package a lot for my actuarial and general interest in data science. Hence this package is a daily driver for me. The various functions such as arima and acf help me in estimation and modelling of time series data.  
+
+![A possible stat dashboard](stat.jpg){height="250" width=60% }
+
+# A gallery of stats examples
+
+## 1. The AutoCovariance of the log of AirPassengers data using the acf function.  
+
+
+```{r }
+acf(
+    log(AirPassengers)
+)
+```
+
+## 2. Creating a ARIMA model for Air Passengers  
+
+```{r , eval = knitr::is_html_output(), layout = "l-body-outset"}
+(fit <- arima(
+    log(AirPassengers),
+    c(0,1,1),
+    seasonal=list(order=c(0,1,1),
+                  period=12)
+    )
+)
+```
+
+```{r , eval = knitr::is_latex_output(), layout = "l-body-outset"}
+(fit <- arima(
+    log(AirPassengers),
+    c(0,1,1),
+    seasonal=list(order=c(0,1,1),
+                  period=12)
+    )
+)
+```
+
+# Summary
+
+We have demonstrated some Stat functions that are available in the package \pkg{stats}. 
