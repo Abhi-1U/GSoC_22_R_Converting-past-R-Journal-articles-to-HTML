@@ -1,6 +1,6 @@
 --- 
- title: Demo Title 
- bibliography: RJreferences.bib 
+ title: Statistical Software from a Blind Person’s Perspective 
+ bibliography: Godfrey.bib 
  output: rjtools::rjournal_web_article 
  
 --- 
