@@ -1,11 +1,27 @@
-# R Script with functions to convert Rmd to HTML with supporting files copied
+
+# Test 2 MEDIUM
+
+### R Script with functions to convert Rmd to HTML with supporting files copied
+
+### Objectives :
+1. -[x] Creating essential R functions
+2. -[x] Used Pandoc to convert Tex into md
+3. -[x] Option to append title,bibliography,output as Rmd YAML metadata
+4. -[x] Saved the Rmd file in new output directory
+5. -[x] Copy essential attachments through script
+6. -[x] Generated Rmd File Compiles into a HTML Webpage
+7. -[x] Tried with both Examples with HTML output 
+
+
+
 
 ## Procedure to do the task 
 1. open the LateX-Rmd.R script file.
 2. go into the test directory for example Examples/RJ-2021-048-bengtsson-future 
 3. change the working directory to the test directory
 4. run the Latex-Rmd.R script file with minor changes such as the title and bib file name 
- ```
+
+ ```R
  Append_Markdown_Files("RJwrapper.md",title = "A Unifying Framework for Parallel and Distributed Processing in R using Futures",bib_file = "bengtsson-future.bib")
  ```
 
