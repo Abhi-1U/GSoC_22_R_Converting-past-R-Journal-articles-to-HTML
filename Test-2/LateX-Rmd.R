@@ -1,9 +1,9 @@
 # Abhi-1U
-# 
+#
 Convert_to_Markdown<- function(input_file){
   md_file_name=paste(toString(tools::file_path_sans_ext(input_file)),".md",sep="")
-  rmarkdown::pandoc_convert(input_file, to= "markdown",output=md_file_name)  
-  
+  rmarkdown::pandoc_convert(input_file, to= "markdown",output=md_file_name)
+
 }
 Append_Markdown_Files <- function(input_file,title,bib_file){
   md_file = file(input_file,open="rt")
@@ -25,7 +25,7 @@ Append_Markdown_Files <- function(input_file,title,bib_file){
 }
 
 Copy_Other_Files<-function(){
-  
+
   dir_list=list.dirs(recursive = FALSE)
   target_dir=basename(dir_list[grep("*_files",dir_list)])
   print(target_dir)
@@ -37,6 +37,11 @@ Copy_Other_Files<-function(){
   print(target_files)
   file.copy(target_files,to = "output/", copy.mode = T, recursive=FALSE,)
 }
+Produce_HTML<-function(input_file_path){
+    rmarkdown::render(input = input_file_path)
+}
+
 Convert_to_Markdown("RJwrapper.tex")
 Append_Markdown_Files("RJwrapper.md",title = "Demo Title",bib_file = "RJreferences.bib")
 Copy_Other_Files()
+Produce_HTML('./output/RJwrapper.Rmd')

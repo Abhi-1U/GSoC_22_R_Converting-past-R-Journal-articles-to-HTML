@@ -9,7 +9,7 @@
 3. -[x] Option to append title,bibliography,output as Rmd YAML metadata
 4. -[x] Saved the Rmd file in new output directory
 5. -[x] Copy essential attachments through script
-6. -[x] Generated Rmd File Compiles into a HTML Webpage
+6. -[x] Generated Rmd File Compiles into a HTML Webpage through function
 7. -[x] Tried with both Examples with HTML output 
 
 

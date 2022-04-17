@@ -1,6 +1,6 @@
 --- 
- title: A Unifying Framework for Parallel and Distributed Processing in R using Futures 
- bibliography: bengtsson-future.bib 
+ title: Statistical Software from a Blind Person’s Perspective 
+ bibliography: Godfrey.bib 
  output: rjtools::rjournal_web_article 
  
 --- 
