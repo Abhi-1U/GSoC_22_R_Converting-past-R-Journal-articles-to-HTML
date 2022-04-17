@@ -1,0 +1,213 @@
+\documentclass[12pt]{article}
+% \usepackage[spanish]{babel}
+% \usepackage{lipsum}
+% \usepackage{natbib}
+% \usepackage{graphicx}
+\usepackage{analysis_orax}
+\usepackage{hyperref}
+%------------------Document----------------------------
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fontawesome}
+\begin{document}
+
+%-------------------------TitlePage------------------------
+%\begin{titlepage}
+%\end{titlepage}
+
+%-------------------------Content------------------------
+
+\section{Project Proposal}
+
+\subsection{Converting past R Journal articles to HTML}
+
+\subsubsection{1. Project Info}
+{\large\bfseries Project Idea : } {Converting past R Journal articles to HTML}\\
+\\
+{\large\bfseries Project synopsis :} R Journal toolkit has been developing a new website, which would act as a central repository for all articles in HTML format. Since these many of the past articles were created in PDF format, its not always the best format for digital age interactive websites. Hence the past articles need to be converted into HTML through intermediate conversions. \\
+\\
+{\large\bfseries URL of project idea page:} \href{https://github.com/rstats-gsoc/gsoc2022/wiki/Converting-past-R-Journal-articles-to-HTML}{\color{orange}Converting past R Journal articles to HTML}
+\subsubsection{2. A little bit about me}
+ {\large Greetings},\\
+ \\
+\hspace*{3mm}My journey with programming and software development started when I pursued Bachelors in Computer Science degree. I made interesting projects all ranging from simple games to complicated packages.
+I really opened up to open source about 2 years back and started developing my own projects and contributing to a few other projects. Some of the interesting projects I made where python packages which could be re-used. During this period, I spent a lot of time making quality documentation through LaTeX and Markdown. 
+ 
+    The reason I am interested in this idea is how it revolves around the idea of converting one format
+to another and then that to another, this kind of task is more of finding errors and mistakes in different document types and fixing them to successfully get the desired result. My journey with R as a programming language has a long way to go as I would be using it on a daily basis for my actuarial studies. 
+
+    Hence, I think given the background I come from and my sheer love for high quality documents, I
+think this GSoC opportunity can really get me closer to the kind of work I am willing to do.\\
+\\
+{\large\bfseries Links to my projects:}\\
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+ \item Pyrix: \href{https://github.com/Abhi-1U/pyrix}{\color{orange}Source code} \href{https://abhi-1u.github.io/pyrix-docs/}{\color{orange}Documentation}
+ \item REST.8266: \href{https://github.com/Abhi-1U/REST.8266}{\color{orange}Source code} \href{https://github.com/Abhi-1U/REST.8266.web.client}{\color{orange}Web client}
+ \item IMongo: \href{https://github.com/Abhi-1U/imongo}{\color{orange}Forked project}
+\end{enumerate}
+
+\subsubsection{3. Contact Information}
+{\large\bfseries Removed from Public Copy for Privacy Reasons} 
+
+\subsubsection{4. Contributor affiliation}
+{\large\bfseries Removed from Public Copy for Privacy Reasons} 
+
+\subsubsection{5. Schedule Conflicts}
+{\large\bfseries Removed from Public Copy for Privacy Reasons} 
+
+\subsubsection{6. Mentors}
+{\large\bfseries Evaluating Mentor name and email:}\\ Heather Turner {\color{orange}\url{heather.turner@r-project.org}}\\
+\\
+{\large\bfseries Evaluating Co-Mentor name and email:}\\   Di Cook {\color{orange}\url{dicook@monash.edu}}\\
+\\
+{\large\bfseries Have you been in touch with the mentors? When and how?}\\
+I have tried to reach out the mentors by email in the 3rd week of April 2022 , I hope to get a response soon and will update this section accordingly.
+
+\subsubsection{7. Coding Plan and Methods}
+{\large\bfseries Starting Point}\\
+ Since the projects actual outcome is related to the tests conducted, I feel the code, package I have produced for the tests can actually become a great starting point for this project.\\
+ I have posted the source code on github under MIT LICENSE. ( \href{https://github.com/Abhi-1U/TexoR}{\color{orange}TexoR})\\
+ \\
+{\large\bfseries Analyzing the project}\\ 
+ The next logical step would be to find all the relevant articles that need conversions and to run a pilot test on handful of documents to see what are the shortcomings in the \href{https://github.com/Abhi-1U/TexoR}{\color{orange}TexoR}) package. The code will be restructured accordingly to adapt to different document patterns.
+ 
+ During this phase I would also like to set up an accountability statistics for the articles in the conversion process. This data is intended to be updated on a regular basis to maintain accountability and also to highlight any issues arising.\\
+ \\
+ \\
+ {\large\bfseries Finalizing the Function Set}\\ 
+ After the issues are fixed, I would like to finalize the functions which can either be left out in a separate package \href{https://github.com/Abhi-1U/TexoR}{\color{orange}TexoR}) or be integrated into the rjtools set. I am open to whichever way works out best.\\
+ \\
+ {\large\bfseries Automation}\\
+ I would also like to help in setting up an automated conversion system which is more efficient as there are so many documents that need conversion and doing it by hand would be a big task. With automation I wish to link the accountability statistics for monitoring the situation.
+ 
+ This automated system can be a bunch of scripts in programming languages like python, R or bash. I would like to talk more about this section later during the community bonding period.\\
+ \\
+ {\large\bfseries Mid-project crisis scenarios}\\
+ This section may be odd but, to avoid any issues and risks I felt the need to include it this early. The project implementation is unpredictable and may or may not follow the given plan and methods exactly depending on the unplanned circumstances which may arise during this timeline. 
+ 
+ For any crisis or problems in the project, I would like to communicate with the mentor or co-mentor as soon as possible to fix the problem and deliver project on time.\\
+ \\
+ {\large\bfseries Method of Implementation}\\
+ \\
+ \begin{figure}[htb]
+    \centering
+      \includegraphics[width=1\textwidth]{figures/mermaid-diagram-20220417133810.png}
+       \centering
+      \textcolor{Orange}{\textbf{\caption{Process of Conversion}}}\label{fig:1}
+    \end{figure}
+The diagram here shows the flow of conversion of an article in LaTeX source file to HTML document.
+The functions are supposed to invoke the pandoc conversion for the given file and export it in markdown.
+Then take that markdown file convert it into R-Markdown by appending the YAML headers. Along with this the Function also needs to copy the supporting files such as bibliography, images etc. Lastly one can knit the R-Markdown into HTML file.
+
+Although it is not perfect this process works out but there are potential issues such as file path handling, automation of reading the YAML header metadata information from the Tex File itself.\\
+\\
+{\large\bfseries Potential Challenges}
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+\item LateX conversion which includes pdf might not be rendered properly. I have to look into this and come up with a different strategy.
+\item Automating the process of reading the tex file and adding the relevant YAML headers such as :
+ title, author etc..
+\end{enumerate}
+ \subsubsection{8. TimeLine}
+ 
+{\large\bfseries {\color{orange}Today - April 19}  GSoC contributor application deadline}\\
+
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+\item Till April 19, I would complete the tests,contact mentors,finish the  proposal and take care of  formalities.
+\end{enumerate}
+\\
+{\large\bfseries {\color{orange}May 20 - June 12}  Community Bonding Period }
+
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+\item Increased communication with my mentor and co-mentor for more information and queries.
+\item During this time frame I would like to interact and get to know more about the mentors, R community members and other GSoC contributors. 
+\item One of my agenda in discussion would be how is the R journal going to automate the process of conversion.
+\item As I have described the coding plan above, I feel this time is the right time to discuss, do preliminary analysis and get more information on the articles, search for a diverse pool of articles to start my pilot run with. 
+ \end{enumerate}
+{\large\bfseries  {\color{orange}June 13 - June 30} Phase 1 - Pilot Testing}
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+\item Pilot test run of the existing code and analyzing the results.
+\item Fixing bugs based on the initial tests.
+\item Improvements in the R code with regards to implementation.
+\item Inclusion of better vignette examples. 
+\item Phase-1 Report Document by June 30.
+\end{enumerate}
+{\large\bfseries {\color{orange}June 30 - July 15} Phase 2 - Adding Test Suites}
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+\item Code Improvements, bug fixes.
+\item Work on Test-Suites for Testing the code.
+\item Completion of pending Phase-1 work (if any).
+\item Phase-2 Report Document by July 16.
+\end{enumerate}
+{\large\bfseries {\color{orange}July 15 - July 30} Phase 3 - Documentation}
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+\item Adding Documentation, guided tutorials for the usage and conversion process.
+\item Completion of pending work from previous phases (if any). 
+\item Draft Submission of GSoC Phase 1 Evaluation Report before July 25.
+\item Phase-3 Report Document by July 31.
+\end{enumerate}
+{\large\bfseries {\color{orange}July 30 - August 15} Phase 4 - Work Period}
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+\item Considering this is the work period, I would take the project further with guidance from my mentors.
+\item Proposed period where the final set of Functions along with documentation would be ready.
+\item Completion of pending work from previous phases (if any).
+\item Would like to get involved with the R journal team on how they plan to convert documents.
+\item Phase-4 Report Document by August 16.
+\end{enumerate}
+{\large\bfseries {\color{orange}August 15 - August 30} Phase 5 - Automation}
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+\item Development of Automated Scripts for local conversion of a document from LaTeX to HTML.
+\item Helping out converting LaTeX articles into HTML.
+\item Phase-5 Report Document by August 31.
+\end{enumerate}
+{\large\bfseries {\color{orange}August 30 - September 15} Phase 6 - Wrapping up}
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+\item drafting and submission of final work product and  final mentor evaluation.
+\item Work Should be completed.
+\item Completing final checks and reviews.
+\item Phase-6 Report Document by September 12
+\end{enumerate}
+{\large\bfseries {\color{orange}September 15 and beyond } Phase X - Contributor}
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+\item Contributing code and other relevant submissions to open source project of R.
+\item Would be interested in maintaining the TexoR package if it is not integrated into the Rjtools.
+\end{enumerate}
+\subsubsection{9. Management of Coding Project}
+{\large\bfseries How do you propose to ensure code is submitted / tested?}
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+ \item {\color{MediumBlue} Electricity}: I live in a region where there is 24/7 Electricity supply, hence there should not be any technical problems with that. 
+ \item {\color{MediumBlue} Internet}: I have a Fibre optic internet service as well as Wireless mobile data(for backup), hence communication should not be an issue.
+ \item {\color{MediumBlue} Device}: I have a desktop PC as well as a Laptop, hence software development and other tasks should not face any issue.
+ \item {\color{MediumBlue} Other}: If any issue arises, I will contact the mentor,co-mentor or r-team member to resolve the problem at the earliest and ensure code is submitted.
+\end{enumerate}
+{\large\bfseries How often do you plan to commit?}
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+ \item {\color{MediumBlue} Major Code Commits}: 2-3 times a week (approx.., may vary as per workload )
+ \item {\color{MediumBlue} Minor Code Commits}: Regular commits throughout the Internship
+ \item {\color{MediumBlue} Bug Fixes}: As soon as the issue is resolved and verified. 
+ \item {\color{MediumBlue} Testing}: Initially manual testing would be prevalent but with time automatic testing would be implemented.
+ \item {\color{MediumBlue} Documentation}:Regular documentation and reports.
+\end{enumerate}
+{\large\bfseries What changes in commit behavior would indicate a problem?}\\
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+ \item {\color{MediumBlue} No Commit in the past 2 weeks}: Unless there is prior request/explanation for this behaviour, It could indicate that I might be facing some problem (technical or otherwise).
+\item{\color{MediumBlue} No Communication}: No communication for more than a month is not expected, but could indicate a major problem.
+
+\end{enumerate}
+\subsubsection{10. Test Results}
+I have completed all the tests to the best possible extent I could and have added the link to the bottom of the Github wiki page  \href{https://github.com/rstats-gsoc/gsoc2022/wiki/Converting-past-R-Journal-articles-to-HTML}{\color{orange}Converting past R Journal articles to HTML}.\\
+\\
+{\large\bfseries Links To Test Results}\\
+
+\begin{enumerate}[label = {  \color{MediumBlue} \textbf{\arabic*. }},align=left]
+ \item {\color{MediumBlue} Test-1 EASY}: \href{https://github.com/Abhi-1U/GSoC_22_R_Converting-past-R-Journal-articles-to-HTML/tree/main/Test-1}{\color{orange}Source code}
+ \item {\color{MediumBlue} Test-2 MEDIUM}: \href{https://github.com/Abhi-1U/GSoC_22_R_Converting-past-R-Journal-articles-to-HTML/tree/main/Test-2}{\color{orange}Source code}
+ \item {\color{MediumBlue} Test-3 HARD}: \href{https://github.com/Abhi-1U/GSoC_22_R_Converting-past-R-Journal-articles-to-HTML/tree/main/Test-3}{\color{orange}Source code} \href{https://github.com/Abhi-1U/TexoR}{\color{orange}TexoR Package} 
+\end{enumerate}
+
+ 
+
+
+% %-------------------------Content------------------------
+
+
+\end{document}
