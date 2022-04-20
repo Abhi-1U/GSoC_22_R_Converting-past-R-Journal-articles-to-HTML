@@ -17,7 +17,7 @@ Run the script TexR.R in a test directory with working directory set to the curr
 ```R
 setwd(test_directory_name)
 ```
-
+*Note : Currently tested with RStudio 2022.02.1 Build 461 on Linux Mint 20.3* 
 ## Procedure to do the task 
 1. open the TexR.R script file.
 2. go into the test directory for example Examples/RJ-2021-048-bengtsson-future 
